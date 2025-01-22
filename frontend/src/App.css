@@ -1,0 +1,25 @@
+.Home {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.TodoPage {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  margin: 2px;
+  margin-left: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

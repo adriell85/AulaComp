@@ -1,0 +1,14 @@
+.ListItem{
+    margin-top: 5px;
+    /* background-color: blue; */
+    width: 200px;
+    margin-left: 35vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.ButtonList{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
