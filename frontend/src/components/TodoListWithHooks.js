@@ -8,18 +8,30 @@ const TodoList = () => {
 
     useEffect(()=>{
         console.log('Resultado Get:',todos)
-
         return console.log('obtidos!!')
     },[todos])
 
-    // Fetch todos from the API
+
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         console.log('Executando continuamente...');
+    //     }, 1000); // Repete a cada 1 segundo
+    
+    //     return () => clearInterval(interval); // Limpa o intervalo ao desmontar
+    // }, []);
+
+
+    // useEffect(() => {
+    //     console.log('Executando após cada renderização');
+    // });
+
     useEffect(() => {
         axios.get('http://localhost:5000/api/todos')
             .then((response) => setTodos(response.data))
             .catch((error) => console.error(error));
     }, []);
 
-    // Add a new todo
+
     const addTodo = () => {
         if (!newTodo) return;
         axios.post('http://localhost:5000/api/todos', { title: newTodo })
@@ -28,7 +40,7 @@ const TodoList = () => {
         setNewTodo('');
     };
 
-    // Toggle completed status
+
     const toggleTodo = (id, completed) => {
         axios.put(`http://localhost:5000/api/todos/${id}`, { completed: !completed })
             .then((response) => {
@@ -37,12 +49,14 @@ const TodoList = () => {
             .catch((error) => console.error(error));
     };
 
-    // Delete a todo
+
     const deleteTodo = (id) => {
         axios.delete(`http://localhost:5000/api/todos/${id}`)
             .then(() => setTodos(todos.filter(todo => todo._id !== id)))
             .catch((error) => console.error(error));
     };
+
+    
 
     return (
         <div>

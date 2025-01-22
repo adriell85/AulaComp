@@ -15,7 +15,6 @@ class TodoList extends Component {
         window.location.reload(false);
       }
 
-    // Fetch todos from the API
     componentDidMount() {
         axios.get('http://localhost:5000/api/todos')
             .then((response) => {
@@ -24,7 +23,7 @@ class TodoList extends Component {
             .catch((error) => console.error(error));
     }
 
-    // Add a new todo
+
     addTodo = () => {
         const { newTodo, todos } = this.state;
         if (!newTodo) return;
@@ -39,7 +38,7 @@ class TodoList extends Component {
             .catch((error) => console.error(error));
     };
 
-    // Toggle completed status
+
     toggleTodo = (id, completed) => {
         axios.put(`http://localhost:5000/api/todos/${id}`, { completed: !completed })
             .then((response) => {
@@ -51,7 +50,7 @@ class TodoList extends Component {
             .catch((error) => console.error(error));
     };
 
-    // Delete a todo
+
     deleteTodo = (id) => {
         axios.delete(`http://localhost:5000/api/todos/${id}`)
             .then((response) => {
@@ -61,7 +60,7 @@ class TodoList extends Component {
             .catch((error) => console.error(error));
     };
 
-    // Handle input change
+
     handleInputChange = (event) => {
         this.setState({ newTodo: event.target.value });
     };
