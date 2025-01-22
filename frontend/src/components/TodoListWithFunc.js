@@ -11,6 +11,10 @@ class TodoList extends Component {
         };
     }
 
+    refreshPage() {
+        window.location.reload(false);
+      }
+
     // Fetch todos from the API
     componentDidMount() {
         axios.get('http://localhost:5000/api/todos')
@@ -50,7 +54,7 @@ class TodoList extends Component {
     // Delete a todo
     deleteTodo = (id) => {
         axios.delete(`http://localhost:5000/api/todos/${id}`)
-            .then(() => {
+            .then((response) => {
                 const filteredTodos = this.state.todos.filter(todo => todo._id !== id);
                 this.setState({ todos: filteredTodos });
             })

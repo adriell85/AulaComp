@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoList from '../components/TodoListWithFunc';
+import TodoList from '../components/TodoListWithHooks';
 import './TodoPage.css'
 import { useNavigate } from 'react-router-dom';
 

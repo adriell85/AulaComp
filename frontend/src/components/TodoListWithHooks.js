@@ -8,6 +8,8 @@ const TodoList = () => {
 
     useEffect(()=>{
         console.log('Resultado Get:',todos)
+
+        return console.log('obtidos!!')
     },[todos])
 
     // Fetch todos from the API
